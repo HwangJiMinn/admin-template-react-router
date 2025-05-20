@@ -14,18 +14,13 @@ import {
   useLocation,
 } from 'react-router';
 
-import {
-  getFontSession,
-  getLanguageSession,
-  getThemeSession,
-} from './.server/services/session.service';
+import { getLanguageSession, getThemeSession } from './.server/services/session.service';
 import type { Route } from './+types/root';
 import { AppSidebar } from './components/layout/app-sidebar';
 import { NavigationProgress } from './components/navigation-progress';
 import SkipToMain from './components/skip-to-main';
 import { SidebarProvider } from './components/ui/sidebar';
 import { Toaster } from './components/ui/sonner';
-import { FontProvider } from './context/font-context';
 import { SearchProvider } from './context/search-context';
 import { LanguageProvider } from './hooks/use-language';
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from './hooks/use-theme';
@@ -37,16 +32,14 @@ import NotFoundError from './routes/pages/errors/not-found-error';
 import UnauthorisedError from './routes/pages/errors/unauthorized-error';
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const [{ getLanguage }, { getTheme }, { getFont }] = await Promise.all([
+  const [{ getLanguage }, { getTheme }] = await Promise.all([
     getLanguageSession(request),
     getThemeSession(request),
-    getFontSession(request),
   ]);
 
   return {
     lang: getLanguage(),
     ssrTheme: getTheme(),
-    ssrFont: getFont(), // 🔥 font도 loader에서 전달
   };
 };
 
@@ -102,14 +95,14 @@ export const App = ({ lang, ssrTheme }: Route.ComponentProps['loaderData']) => {
 };
 
 export default function AppWithProviders({ loaderData }: Route.ComponentProps) {
-  const { lang, ssrTheme, ssrFont } = loaderData;
+  const { lang, ssrTheme } = loaderData;
 
   return (
     <LanguageProvider specifiedLanguage={lang} languageAction="/api/language">
       <ThemeProvider specifiedTheme={ssrTheme} themeAction="/api/theme">
-        <FontProvider specifiedFont={ssrFont} fontAction="/api/font">
-          <App {...loaderData} />
-        </FontProvider>
+        {/* <FontProvider specifiedFont={ssrFont} fontAction="/api/font"> */}
+        <App {...loaderData} />
+        {/* </FontProvider> */}
       </ThemeProvider>
     </LanguageProvider>
   );

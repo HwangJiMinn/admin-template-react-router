@@ -1,4 +1,4 @@
-import { index, layout, prefix, route, type RouteConfig } from '@react-router/dev/routes';
+import { index, prefix, route, type RouteConfig } from '@react-router/dev/routes';
 
 export default [
   // ✅ 기본 대시보드
@@ -31,17 +31,6 @@ export default [
     route('notifications', 'routes/pages/settings/notifications/index.tsx'),
     route('display', 'routes/pages/settings/display/index.tsx'),
   ]),
-
-  // route('dashboard', './dashboard.tsx', [
-  //   // child routes
-  //   index('./home.tsx'),
-  //   route('settings', './settings.tsx'),
-  // ]),
-
-  // layout('./auth/layout.tsx', [
-  //   route('login', './auth/login.tsx'),
-  //   route('register', './auth/register.tsx'),
-  // ]),
 
   // ✅ API 경로들
   ...prefix('api', [
