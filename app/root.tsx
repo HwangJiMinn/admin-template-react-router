@@ -100,9 +100,7 @@ export default function AppWithProviders({ loaderData }: Route.ComponentProps) {
   return (
     <LanguageProvider specifiedLanguage={lang} languageAction="/api/language">
       <ThemeProvider specifiedTheme={ssrTheme} themeAction="/api/theme">
-        {/* <FontProvider specifiedFont={ssrFont} fontAction="/api/font"> */}
         <App {...loaderData} />
-        {/* </FontProvider> */}
       </ThemeProvider>
     </LanguageProvider>
   );

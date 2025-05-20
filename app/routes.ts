@@ -36,6 +36,5 @@ export default [
   ...prefix('api', [
     route('theme', 'routes/apis/theme.ts'),
     route('language', 'routes/apis/language.ts'),
-    route('font', 'routes/apis/font.ts'),
   ]),
 ] satisfies RouteConfig;
