@@ -1,9 +1,3 @@
-import {
-  IconArrowRightDashed,
-  IconDeviceLaptop,
-  IconMoon,
-  IconSun,
-} from '@tabler/icons-react';
 import React from 'react';
 import { useNavigate } from 'react-router';
 
@@ -54,9 +48,7 @@ export function CommandMenu() {
                         runCommand(() => navigate(navItem.url));
                       }}
                     >
-                      <div className="mr-2 flex h-4 w-4 items-center justify-center">
-                        <IconArrowRightDashed className="size-2 text-muted-foreground/80" />
-                      </div>
+                      <div className="mr-2 flex h-4 w-4 items-center justify-center" />
                       {navItem.title}
                     </CommandItem>
                   );
@@ -69,9 +61,7 @@ export function CommandMenu() {
                       runCommand(() => navigate(subItem.url));
                     }}
                   >
-                    <div className="mr-2 flex h-4 w-4 items-center justify-center">
-                      <IconArrowRightDashed className="size-2 text-muted-foreground/80" />
-                    </div>
+                    <div className="mr-2 flex h-4 w-4 items-center justify-center" />
                     {subItem.title}
                   </CommandItem>
                 ));
@@ -81,10 +71,9 @@ export function CommandMenu() {
           <CommandSeparator />
           <CommandGroup heading="Theme">
             <CommandItem onSelect={() => runCommand(() => setTheme(Theme.LIGHT))}>
-              <IconSun /> <span>Light</span>
+              <span>Light</span>
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme(Theme.DARK))}>
-              <IconMoon className="scale-90" />
               <span>Dark</span>
             </CommandItem>
           </CommandGroup>

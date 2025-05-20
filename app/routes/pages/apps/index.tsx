@@ -1,8 +1,3 @@
-import {
-  IconAdjustmentsHorizontal,
-  IconSortAscendingLetters,
-  IconSortDescendingLetters,
-} from '@tabler/icons-react';
 import { useState } from 'react';
 
 import { Header } from '~/components/layout/header';
@@ -88,20 +83,16 @@ export default function Apps() {
 
           <Select value={sort} onValueChange={setSort}>
             <SelectTrigger className="w-16">
-              <SelectValue>
-                <IconAdjustmentsHorizontal size={18} />
-              </SelectValue>
+              <SelectValue />
             </SelectTrigger>
             <SelectContent align="end">
               <SelectItem value="ascending">
                 <div className="flex items-center gap-4">
-                  <IconSortAscendingLetters size={16} />
                   <span>Ascending</span>
                 </div>
               </SelectItem>
               <SelectItem value="descending">
                 <div className="flex items-center gap-4">
-                  <IconSortDescendingLetters size={16} />
                   <span>Descending</span>
                 </div>
               </SelectItem>
@@ -113,9 +104,6 @@ export default function Apps() {
           {filteredApps.map((app) => (
             <li key={app.name} className="rounded-lg border p-4 hover:shadow-md">
               <div className="mb-8 flex items-center justify-between">
-                <div className="flex size-10 items-center justify-center rounded-lg bg-muted p-2">
-                  {app.logo}
-                </div>
                 <Button
                   variant="outline"
                   size="sm"

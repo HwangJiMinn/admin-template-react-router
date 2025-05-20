@@ -1,5 +1,4 @@
 import { DotsHorizontalIcon } from '@radix-ui/react-icons';
-import { IconEdit, IconTrash } from '@tabler/icons-react';
 import type { Row } from '@tanstack/react-table';
 
 import { Button } from '~/components/ui/button';
@@ -37,9 +36,7 @@ export function DataTableRowActions({ row }: DataTableRowActionsProps) {
           }}
         >
           Edit
-          <DropdownMenuShortcut>
-            <IconEdit size={16} />
-          </DropdownMenuShortcut>
+          <DropdownMenuShortcut />
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem
@@ -50,9 +47,7 @@ export function DataTableRowActions({ row }: DataTableRowActionsProps) {
           className="text-red-500!"
         >
           Delete
-          <DropdownMenuShortcut>
-            <IconTrash size={16} />
-          </DropdownMenuShortcut>
+          <DropdownMenuShortcut />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

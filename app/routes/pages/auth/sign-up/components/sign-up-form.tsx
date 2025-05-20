@@ -1,5 +1,4 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { IconBrandFacebook, IconBrandGithub } from '@tabler/icons-react';
 import { type HTMLAttributes, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -125,10 +124,10 @@ export function SignUpForm({ className, ...props }: SignUpFormProps) {
 
         <div className="grid grid-cols-2 gap-2">
           <Button variant="outline" className="w-full" type="button" disabled={isLoading}>
-            <IconBrandGithub className="h-4 w-4" /> GitHub
+            GitHub
           </Button>
           <Button variant="outline" className="w-full" type="button" disabled={isLoading}>
-            <IconBrandFacebook className="h-4 w-4" /> Facebook
+            Facebook
           </Button>
         </div>
       </form>

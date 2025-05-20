@@ -1,4 +1,3 @@
-import { IconMenu } from '@tabler/icons-react';
 import { Link } from 'react-router';
 
 import { Button } from '~/components/ui/button';
@@ -25,9 +24,7 @@ export function TopNav({ className, links, ...props }: TopNavProps) {
       <div className="md:hidden">
         <DropdownMenu modal={false}>
           <DropdownMenuTrigger asChild>
-            <Button size="icon" variant="outline">
-              <IconMenu />
-            </Button>
+            <Button size="icon" variant="outline" />
           </DropdownMenuTrigger>
           <DropdownMenuContent side="bottom" align="start">
             {links.map(({ title, href, isActive, disabled }) => (

@@ -1,5 +1,3 @@
-import { IconLoader } from '@tabler/icons-react';
-
 import { FormControl } from '~/components/ui/form';
 import {
   Select,
@@ -44,11 +42,7 @@ export function SelectDropdown({
       <SelectContent>
         {isPending ? (
           <SelectItem disabled value="loading" className="h-14">
-            <div className="flex items-center justify-center gap-2">
-              <IconLoader className="h-5 w-5 animate-spin" />
-              {'  '}
-              Loading...
-            </div>
+            <div className="flex items-center justify-center gap-2">Loading...</div>
           </SelectItem>
         ) : (
           items?.map(({ label, value }) => (

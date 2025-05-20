@@ -1,5 +1,4 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { IconMailPlus, IconSend } from '@tabler/icons-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -65,9 +64,7 @@ export function UsersInviteDialog({ open, onOpenChange }: Props) {
     >
       <DialogContent className="sm:max-w-md">
         <DialogHeader className="text-left">
-          <DialogTitle className="flex items-center gap-2">
-            <IconMailPlus /> Invite User
-          </DialogTitle>
+          <DialogTitle className="flex items-center gap-2">Invite User</DialogTitle>
           <DialogDescription>
             Invite new user to join your team by sending them an email invitation. Assign
             a role to define their access level.
@@ -135,7 +132,7 @@ export function UsersInviteDialog({ open, onOpenChange }: Props) {
             <Button variant="outline">Cancel</Button>
           </DialogClose>
           <Button type="submit" form="user-invite-form">
-            Invite <IconSend />
+            Invite
           </Button>
         </DialogFooter>
       </DialogContent>

@@ -1,6 +1,5 @@
 'use client';
 
-import { IconAlertTriangle } from '@tabler/icons-react';
 import { useState } from 'react';
 
 import { ConfirmDialog } from '~/components/confirm-dialog';
@@ -33,12 +32,7 @@ export function UsersDeleteDialog({ open, onOpenChange, currentRow }: Props) {
       onOpenChange={onOpenChange}
       handleConfirm={handleDelete}
       disabled={value.trim() !== currentRow.username}
-      title={
-        <span className="text-destructive">
-          <IconAlertTriangle className="mr-1 inline-block stroke-destructive" size={18} />{' '}
-          Delete User
-        </span>
-      }
+      title={<span className="text-destructive">Delete User</span>}
       desc={
         <div className="space-y-4">
           <p className="mb-2">
